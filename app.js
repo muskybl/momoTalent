@@ -1,14 +1,17 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
 const compression = require('compression');
 const mongoose = require('mongoose');
 const mainRouter = require('./routes');
+
 app.use(cors());
 app.use(compression());
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.connect(
-  'mongodb+srv://momotalent2020:momotalent2020@cluster0.d4nvh.mongodb.net/<dbname>?retryWrites=true&w=majority',
+  'mongodb+srv://momotalent2020:momotalent2020@cluster0.d4nvh.mongodb.net/momo?retryWrites=true&w=majority',
   {
     useFindAndModify: false,
     useCreateIndex: true,

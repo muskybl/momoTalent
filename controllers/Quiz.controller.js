@@ -17,7 +17,7 @@ exports.addQuiz = async (req, res) => {
 
   const newQuiz = new Quiz({
     username: username,
-    questions: question,
+    questions: questions,
     score: [],
   });
 

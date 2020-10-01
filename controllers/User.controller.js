@@ -1,7 +1,8 @@
 const User = require('../models/User');
 
 exports.createUser = async (req, res) => {
-  const username = req.body;
+  console.log(req.body);
+  const { username } = req.body;
   const hasUser = await User.findOne({
     username: username,
   });
