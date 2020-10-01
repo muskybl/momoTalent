@@ -15,6 +15,13 @@ exports.getQuiz = async (req, res) => {
 exports.addQuiz = async (req, res) => {
   const { username, questions } = req.body;
 
+  const hasQuiz = await Quiz.findOne({ username: username });
+  if (hasQuiz) {
+    return res.status(400).json({
+      message: 'You cannot create new quiz.',
+    });
+  }
+
   const newQuiz = new Quiz({
     username: username,
     questions: questions,
