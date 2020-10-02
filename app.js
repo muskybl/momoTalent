@@ -5,9 +5,10 @@ const cors = require('cors');
 const compression = require('compression');
 const mongoose = require('mongoose');
 const mainRouter = require('./routes');
-
+// require('./firebase/firebase')
+// require('./localtunnel')
 app.use(cors());
-app.use(compression());
+app.use(compression()); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.connect(
@@ -29,3 +30,5 @@ app.use('/api/v1', mainRouter);
 app.listen(3000, () => {
   console.log('Server start on port 3000');
 });
+
+// ssh -R 80:localhost:3000 ssh.localhost.run
