@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/muskybl/momoTalent.git",
-  "author": "Thanh Viet Nguyen ( I532 ) <thanhvietnguyen@kms-technology.com>",
+  "author": "Thanh Viet Nguyen",
   "license": "MIT",
   "scripts": {
     "build": "node app.js",
